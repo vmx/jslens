@@ -9,11 +9,9 @@ by John Nathan Foster][1].
 Installation
 ------------
 
-If you don't want to run it in the browser, you need [Node.js][2] and the
-qunit npm module installed:
+With [npm](https://npmjs.org) do:
 
-    npm install qunit
-
+    npm install lens
 
 Usage
 -----
@@ -25,8 +23,7 @@ from LXJS 2012][3].
 Running the tests
 -----------------
 
-    node run.js
-
+    npm test
 
 License
 -------

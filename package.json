@@ -1,0 +1,29 @@
+{
+    "name": "lens",
+    "version": "0.0.0",
+    "description": "bidirectional transformation with lenses",
+    "main": "jslens.js",
+    "devDependencies": {
+        "qunit": "~0.5.12"
+    },
+    "scripts": {
+        "test": "node run.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/vmx/jslens.git"
+    },
+    "homepage": "https://github.com/vmx/jslens",
+    "keywords": [
+        "lens",
+        "anamorphism",
+        "functional",
+        "transform"
+    ],
+    "author": {
+        "name": "Volker Mische",
+        "email": "volker.mische@gmail.com",
+        "url": "http://vmx.cx/"
+    },
+    "license": "MIT"
+}
