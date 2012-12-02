@@ -9,7 +9,9 @@
 var NO_CI_MATCH = 0x1;
 var NO_AO_MATCH = 0x2;
 
-CopyLens = function(match) {
+if (typeof exports === 'undefined') exports = window;
+
+var CopyLens = exports.CopyLens = function(match) {
     //if (typeof match === 'string') {
     //    match = new RegExp(match);
     //}
@@ -82,7 +84,7 @@ var processSplit = function(abstractOutput, reAo, concreteInput, reCi) {
 // The `createFun` is a function that will be called in the create, it has
 // one argument which is the abstractOutput. If a string instead of a function
 // is supplied, it is a shortcut for `function() {return thestring;}`
-DefaultLens = function(match, out, createFun) {
+var DefaultLens = exports.DefaultLens = function(match, out, createFun) {
     this.match = match;
     this.out = out;
     if (typeof createFun === 'string') {
@@ -145,7 +147,7 @@ DefaultLens.prototype.create = function(abstractOutput) {
 
 // DelLens takes as second parameter either a function or a string.
 // The string is a shortcut for `function() {return thestring;}`
-DelLens = function(match, createFun) {
+var DelLens = exports.DelLens = function(match, createFun) {
     this.match = match;
     this.out = '';
     if (typeof createFun === 'string') {
@@ -171,7 +173,7 @@ InsLens.prototype.create = DefaultLens.prototype.create;
 
 
 // Combinators
-ConcatLens = function(lenses) {
+var ConcatLens = exports.ConcatLens = function(lenses) {
     this.lenses = lenses;
 };
 ConcatLens.prototype.get = function(concreteInput) {
@@ -235,7 +237,7 @@ ConcatLens.prototype.create = function(abstractOutput) {
     }, {result: '', ao: abstractOutput});
 };
 
-KleeneLens = function(lens) {
+var KleeneLens = exports.KleeneLens = function(lens) {
     this.lens = lens;
 };
 KleeneLens.prototype.get = function(concreteInput) {
@@ -311,7 +313,7 @@ KleeneLens.prototype.create = function(abstractOutput) {
     };
 };
 
-UnionLens = function(lenses) {
+var UnionLens = exports.UnionLens = function(lenses) {
     this.lenses = lenses;
 };
 UnionLens.prototype.get = function(concreteInput) {
