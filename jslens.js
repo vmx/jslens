@@ -9,7 +9,7 @@
 var NO_CI_MATCH = 0x1;
 var NO_AO_MATCH = 0x2;
 
-if (typeof exports === 'undfined') exports = window;
+if (typeof exports === 'undefined') exports = window;
 
 var CopyLens = exports.CopyLens = function(match) {
     //if (typeof match === 'string') {
