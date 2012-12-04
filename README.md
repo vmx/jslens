@@ -16,8 +16,8 @@ With [npm](https://npmjs.org) do:
 Usage
 -----
 
-Please have a look at the tests for now, or have a look at my [presentation
-from LXJS 2012][3].
+Please have a look at the tests for now, have a look at [the slides
+from LXJS 2012][3] or [watch a recording of the talk][4].
 
 
 Running the tests
@@ -34,3 +34,4 @@ This project is Licensed under the MIT License.
 [1]: http://www.cs.cornell.edu/~jnfoster/papers/jnfoster-dissertation.pdf
 [2]: http://nodejs.org/
 [3]: http://vmx.cx/lxjs2012/
+[4]: http://www.youtube.com/watch?v=qKnZk27E9Uc&list=PLt4dwg5cC5TR2cW_QQfR3Po7teWbi81Ms
