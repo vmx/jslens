@@ -59,7 +59,7 @@ var processSplit = function(abstractOutput, reAo, concreteInput, reCi) {
     var res = {
         noMatch: 0
     };
-    if (splitAo === null) {
+    if (splitAo === null || abstractOutput === undefined) {
         res.noMatch |= NO_AO_MATCH;
     }
     else {
@@ -67,7 +67,7 @@ var processSplit = function(abstractOutput, reAo, concreteInput, reCi) {
         //res.result = splitAo[0];
         res.splitAo = splitAo[0];
     }
-    if (splitCi === null) {
+    if (splitCi === null || concreteInput === undefined) {
         res.noMatch |= NO_CI_MATCH;
     }
     else {
@@ -98,7 +98,7 @@ DefaultLens.prototype.get = function(concreteInput) {
     var re = new RegExp('^' + this.match.toString().slice(1,-1));
     var split = re.exec(concreteInput);
     // The lens didn't match
-    if (split === null) {
+    if (split === null || concreteInput === undefined) {
         return {noMatch: NO_CI_MATCH};
     }
 
