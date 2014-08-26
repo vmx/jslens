@@ -334,7 +334,7 @@ UnionLens.prototype.get = function(concreteInput) {
 };
 
 // The put is implemented differently from the original dissertation. The
-// checks whether the source (concrete input) matched is dome right after the
+// checks whether the source (concrete input) matched is done right after the
 // view (abstract output) matched (as opposed to do it only when several
 // views matched).
 UnionLens.prototype.put = function(abstractOutput, concreteInput) {
