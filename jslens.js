@@ -9,9 +9,7 @@
 var NO_CI_MATCH = 0x1;
 var NO_AO_MATCH = 0x2;
 
-if (typeof exports === 'undefined') exports = window;
-
-var CopyLens = exports.CopyLens = function(match) {
+export const CopyLens = function(match) {
     //if (typeof match === 'string') {
     //    match = new RegExp(match);
     //}
@@ -84,7 +82,7 @@ var processSplit = function(abstractOutput, reAo, concreteInput, reCi) {
 // The `createFun` is a function that will be called in the create, it has
 // one argument which is the abstractOutput. If a string instead of a function
 // is supplied, it is a shortcut for `function() {return thestring;}`
-var DefaultLens = exports.DefaultLens = function(match, out, createFun) {
+export const DefaultLens = function(match, out, createFun) {
     this.match = match;
     this.out = out;
     if (typeof createFun === 'string') {
@@ -147,7 +145,7 @@ DefaultLens.prototype.create = function(abstractOutput) {
 
 // DelLens takes as second parameter either a function or a string.
 // The string is a shortcut for `function() {return thestring;}`
-var DelLens = exports.DelLens = function(match, createFun) {
+export const DelLens = function(match, createFun) {
     this.match = match;
     this.out = '';
     if (typeof createFun === 'string') {
@@ -161,7 +159,7 @@ DelLens.prototype.get = DefaultLens.prototype.get;
 DelLens.prototype.put = DefaultLens.prototype.put;
 DelLens.prototype.create = DefaultLens.prototype.create;
 
-InsLens = function(out) {
+export const InsLens = function(out) {
     this.match = new RegExp('');
     this.out = out;
 
@@ -173,7 +171,7 @@ InsLens.prototype.create = DefaultLens.prototype.create;
 
 
 // Combinators
-var ConcatLens = exports.ConcatLens = function(lenses) {
+export const ConcatLens = function(lenses) {
     this.lenses = lenses;
 };
 ConcatLens.prototype.get = function(concreteInput) {
@@ -237,7 +235,7 @@ ConcatLens.prototype.create = function(abstractOutput) {
     }, {result: '', ao: abstractOutput});
 };
 
-var KleeneLens = exports.KleeneLens = function(lens) {
+export const KleeneLens = function(lens) {
     this.lens = lens;
 };
 KleeneLens.prototype.get = function(concreteInput) {
@@ -313,7 +311,7 @@ KleeneLens.prototype.create = function(abstractOutput) {
     };
 };
 
-var UnionLens = exports.UnionLens = function(lenses) {
+export const UnionLens = function(lenses) {
     this.lenses = lenses;
 };
 UnionLens.prototype.get = function(concreteInput) {

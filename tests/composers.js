@@ -1,4 +1,8 @@
-test("Real world example: composers", function () {
+import { test } from 'zora';
+
+import { ConcatLens, CopyLens, DefaultLens, DelLens, InsLens, KleeneLens, UnionLens } from '../jslens.js';
+
+test("Real world example: composers", (tt) => {
     // This test is based on the first example in the original dissertation
 
     // regular expressions
@@ -45,7 +49,7 @@ test("Real world example: composers", function () {
     var putExpected = '<composers><composer><name>Jean Sibelius</name><dates>1865-1957</dates><nationality>Finnish</nationality></composer><composer><name>Aaron Copland</name><dates>1910-1990</dates><nationality>American</nationality></composer><composer><name>Benjamin Britten</name><dates>1913-1976</dates><nationality>English</nationality></composer></composers>';
 
     var get = composers.get(xmlInput);
-    equal(get.result, getExpected, 'lens got correctly converted (get)');
+    tt.equal(get.result, getExpected, 'lens got correctly converted (get)');
     var put = composers.put(getModified, xmlInput);
-    equal(put.result, putExpected, 'lens got correctly converted (put)');
+    tt.equal(put.result, putExpected, 'lens got correctly converted (put)');
 });
