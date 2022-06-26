@@ -1,6 +1,6 @@
 {
     "name": "lens",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "bidirectional transformation with lenses",
     "type": "module",
     "main": "jslens.js",
